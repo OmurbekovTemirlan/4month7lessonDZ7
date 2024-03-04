@@ -7,23 +7,26 @@
 
 import UIKit
 
-class SuccsesVisaViewController: UIViewController {
+class SuccsesViewController: UIViewController {
 
+    private let SuccsesLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Отлично"
+        lb.textColor = UIColor(hex: "#F3F4F6")
+        lb.font = UIFont.boldSystemFont(ofSize: 25)
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        return lb
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(hex: "#628A5C")
+        view.addSubview(SuccsesLabel)
+        NSLayoutConstraint.activate([
+            SuccsesLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            SuccsesLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
